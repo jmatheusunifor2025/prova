@@ -1,18 +1,18 @@
-const express = require("express"); 
-const app = express(); 
+const express = require("express");
+const app = express();
 
 // Define a porta correta para o Railway 
 const PORT = process.env.PORT || 3000;
 
-app.get("/", function(req,res){
-    res.send("<h1>Bem vindo ao meu site!</h1>");
+app.get("/", function(req, res) {
+    res.send("<h1>Bem vindo ao nosso site!</h1>");
 })
 
-app.get("/produtos", function(req,res){
+app.get("/produtos", function(req, res) {
     res.send("<h1>Lista de Produtos!</h1>");
 })
 
-app.get("/consulta/:parametro", function(req,res){
+app.get("/consulta/:parametro", function(req, res) {
     res.send("retorno consulta:" + req.params.parametro);
 })
 
@@ -27,10 +27,10 @@ app.get("/cadastro", function(req, res) {
     res.send("produto criado!");
 });
 
-app.listen(PORT, function(erro){ 
-    if (erro){
+app.listen(PORT, function(erro) {
+    if (erro) {
         console.log("Erro ao Iniciar.");
-    }else{
+    } else {
         console.log(`Servidor rodando na porta ${PORT}`);
     }
 });
